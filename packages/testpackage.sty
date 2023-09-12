@@ -1,0 +1,22 @@
+% Declare the package
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{testpackage}[2023/11/11 v1.0.1 Test Package]
+
+% Load any required packages
+\RequirePackage{graphicx}
+
+% Define any new commands or environments
+\newcommand{\hello}{Hello World!}
+
+% Define any package options
+% define a boolean option
+\newif\ifshowtitle
+\DeclareOption{showtitle}{\showtitletrue}
+\ProcessOptions\relax
+
+% Define the package code
+\AtBeginDocument{%
+    \ifshowtitle
+        \maketitle
+    \fi
+}

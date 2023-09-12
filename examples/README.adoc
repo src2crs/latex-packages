@@ -1,0 +1,8 @@
+= Examples and Experiments
+
+This directory contains examples of how to use the packages.
+
+The code here is also used for development and testing.
+This means the examples here may also contain experimental code that
+explores how to achieve different things.
+This code may later be moved to the main packages, or it may be removed.
