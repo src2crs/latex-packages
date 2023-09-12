@@ -1,0 +1,84 @@
+= Distributed Documents
+
+The code here shows how to create a LaTeX document that is made up of multiple files.
+
+== Problem Description
+
+Use cases for such a distributed document are e.g. an exam with multiple questions,
+or lecture slides with multiple chapters.
+They all are made up of multiple parts, each of which
+may contain multiple assets like graphics, source code listings etc.
+
+To keep such a project organized, it can be helpful to have each part in its
+own directory, with all the assets for the part in the same directory.
+This way, each part is self contained and can ideally even be compiled on its own.
+
+However, the complete document must also be a self contained document.
+In some cases, it may even make sense to publish both the individual parts
+as well as the complete document.
+In this case, the structural elements like chapters, sections, etc. may have
+to be adapted depending on whether the part is compiled on its own or as part
+of the complete document.
+
+The easiest way to do combine multiple LaTeX files would be to use the
+`\input` or `\include` macros,
+which simply insert the contents of the file into the document where they are used.
+
+While this is a simple approach, it has a few limitations:
+
+* There is only one main document containing a document class, preamble, etc.
+  The subfiles cannot be compiled on their own.
+* Any paths used in the subfiles must still be relative to the main document.
+  This can be annoying if the subfiles are in subdirectories.
+* There is no way to adapt the structure of the document depending on
+  the depth at which the subfile is included.
+
+== Requirements
+
+The documents in this directory show how a LaTeX document can be created and managed
+that is made up of multiple files as described above.
+
+The examples here have the following properties:
+
+* There are multiple subdirectories each containing a LaTeX document.
+* Each subdirectory has its own structural elements
+  (e.g. `\section`, `\subsection`, `\question`)
+  that are independent of the structure of the main document.
+* Some subdirectories have their own assets (graphics, source code, etc.).
+* There is a main document that includes the subfiles.
+
+The examples satisfy the following requirements:
+
+* Each subfile can be compiled on its own.
+* The main document can be compiled and the result contains all the subfile results.
+* Some of the subfiles' structural elements are adapted depending on
+  the depth at which the subfile is included in another document.
+  ** For example, a `\section` in a subfile may be a `\subsection` in the main document.
+  ** On the other hand, an environment like `\begin{question}...\end{question}` would
+     remain the same in the subfile and the main document.
+
+== Related Packages
+
+There are various packages that already solve aspects this problem.
+The project here doesn't aim to provide an alternative to these packages,
+but rather to combine them in a way that provides some more flexibility and convenience.
+
+=== Packages for including complete LaTeX documents
+
+The following packages allow for including
+more or less complete LaTeX documents as subfiles:
+
+* https://www.ctan.org/pkg/standalone[`standalone`],
+* https://www.ctan.org/pkg/docmute[`docmute`], or 
+* https://www.ctan.org/pkg/subfiles[`subfiles`]
+* https://www.ctan.org/pkg/subfiles[`subdocs`]
+
+=== Packages for including files from subdirectories
+
+The package https://www.ctan.org/pkg/import[`import`] allows for including
+files from subdirectories using relative paths.
+
+=== Packages for including pdf files
+
+The package https://www.ctan.org/pkg/pdfpages[`pdfpages`] allows for including
+pdf files as pages in a LaTeX document.
