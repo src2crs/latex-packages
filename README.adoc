@@ -1,0 +1,4 @@
+= LaTeX Packages for Source2Course
+
+This repo contains LaTeX packages that are meant to be used by Source2Course and
+generally in documents related to teaching programming and other courses.
