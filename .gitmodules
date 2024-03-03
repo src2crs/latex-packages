@@ -4,3 +4,7 @@
 [submodule "submodules/distdocs"]
 	path = submodules/distdocs
 	url = git@github.com:src2crs/distdocs
+[submodule "submodules/src2listings"]
+	path = submodules/src2listings
+	url = git@github.com:src2crs/src2listings
+	branch = develop
