@@ -1,3 +1,6 @@
 [submodule "submodules/latex-buildsystem"]
 	path = submodules/latex-buildsystem
 	url = git@github.com:src2crs/latex-buildsystem
+[submodule "submodules/distdocs"]
+	path = submodules/distdocs
+	url = git@github.com:src2crs/distdocs
