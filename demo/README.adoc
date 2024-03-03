@@ -1,0 +1,25 @@
+= Using the Repo
+
+This directory shows how the layout of a repo using the `latex-packages`
+repo as a submodule could look like.
+
+This directory should be treated as if it were the root directory of a project.
+There is a subdirectory `latex-packages` that contains
+symlinks to the `buildsystem` and `sty` directory of the repo, as well as the.
+In a production environment, the `latex-packages` directory would be a submodule.
+
+== Setting upa Project
+
+A new project using all the packages in the repo is created with a few steps.
+Assuming you are in the root directory of the repo (or in this demo directory),
+do the following:
+
+* Create the root directory for the LaTeX sources (e.g. `mkdir texsrc`).
+* Change into that directory (e.g. `cd texsrc`).
+* Call the setup script (e.g. `../latex-packages/setup-packages.sh`).
+
+The script will create symlinks to all packages and the (pearl) helper scripts
+for `latexmk`.
+The script will also copy the `latexmkrc` file from the `buildsystem` directory
+to the root of the project.
+This can be used as a starting point, but must be adapted to your needs.
