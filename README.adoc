@@ -1,0 +1,8 @@
+= LaTeX Packages
+
+This repo contains a set of LaTeX package that are developed with and used for
+Source2Course and its related projects.
+
+For now, these packages are located in their own repositories
+and included here as submodules.
+This is meant to simplify including them in other projects.
